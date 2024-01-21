@@ -1,0 +1,45 @@
+
+.myheader .ali{
+  background-color: rgb(67, 113, 199) ;
+  height: 75px;
+}
+
+.amr{
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
+
+}
+
+
+
+.hide-when-mobile {
+  display: flex;
+  justify-content: space-around;
+  align-items: center
+}
+
+/* ==================
+    3. header of mobile
+===================== */
+.show-when-mobile {
+  display: none;
+}
+
+.logo{
+  transition: 1s;
+}
+
+.logo:hover{
+  transform: scale(1.2);
+}
+
+
+
+
+
+
+
+
+
+
+

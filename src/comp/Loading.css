@@ -1,0 +1,19 @@
+.Loading{
+  border-top: 2px red;
+  width: 200px;
+  height:200px;
+
+  border-top:2px solid red;
+  border-right:2px solid red;
+  border-radius: 100%;
+  animation : loadingmove 1s  infinite linear;
+
+}
+
+
+@keyframes loadingmove{
+0% {transform: rotate(0deg)}
+100% {transform: rotate(360deg)}
+}
+
+
