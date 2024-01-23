@@ -1,12 +1,12 @@
-import { Helmet, HelmetProvider } from "react-helmet-async";
+import { Helmet } from "react-helmet-async";
 import Header from "../comp/header";
 import Footer from "../comp/Footer";
-import MainContent from "../comp/MainContent";
+
 
 import Loading from "../comp/Loading";
 
 import { Link } from "react-router-dom";
-import { useEffect } from "react";
+
 
 // use Authentication state hook
 import { auth } from "../firebase/config";
@@ -14,11 +14,10 @@ import { useAuthState } from "react-firebase-hooks/auth";
 
 import { sendEmailVerification } from "firebase/auth";
 
-// import usenavigate
-import { useNavigate } from "react-router-dom";
+
 
 const Home = () => {
-  const [user, loading, error] = useAuthState(auth);
+  const [user, loading] = useAuthState(auth);
 
 
 

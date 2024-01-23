@@ -2,6 +2,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Profile from "./pages/Profile";
+import Error404 from "./pages/Error404";
 
 //علشان حنستخدمها  useConext hook  بستدعى
 import { useContext } from "react";
@@ -14,7 +15,7 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: <Home />,
-    errorElement: <h1>SORROY.........</h1>,
+    errorElement: <Error404/>,
   },
 
   {
