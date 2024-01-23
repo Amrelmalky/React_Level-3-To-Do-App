@@ -28,7 +28,6 @@ const About = () => {
     }
     
   }, );
-
   
   //! 1  loading
   if (loading) {
