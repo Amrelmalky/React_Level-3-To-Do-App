@@ -1,6 +1,6 @@
 import { Helmet, HelmetProvider } from "react-helmet-async";
 import React, { useState } from "react";
-import Header from "../comp/header";
+import Header from "../comp/Header";
 import Footer from "../comp/Footer";
 import "../theme.css";
 import { Link } from "react-router-dom";

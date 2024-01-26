@@ -1,7 +1,7 @@
 import React from "react";
 
 import { Helmet } from "react-helmet-async";
-import Header from "../comp/header";
+import Header from "../comp/Header";
 import Footer from "../comp/Footer";
 
 
@@ -129,7 +129,7 @@ const deletAccountHandler = () => {
 
           <Footer />
         </>
-      );
+      )
     if (!user.emailVerified) {
       return (
         <>
@@ -151,9 +151,9 @@ const deletAccountHandler = () => {
           </main>
           <Footer />
         </>
-      );
+      )
     }
   }
-};
+}
 
 export default Profile;

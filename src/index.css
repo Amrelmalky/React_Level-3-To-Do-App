@@ -7,9 +7,6 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-
-
-
 * {
   margin: 0;
   padding: 0;
@@ -20,7 +17,7 @@ body {
   list-style: none;
 
   letter-spacing: 1px;
-  overflow: hidden;
+  /* overflow: hidden; */
 }
 
 html {
@@ -42,6 +39,86 @@ h1 {
   padding: 20px;
   font-size: 25px;
 }
+
+
+/* ! Very importat rule  */
+.flex {
+  display: flex;
+  justify-content: center;
+}
+
+
+.mt{
+  margin-bottom: 1rem;
+}
+
+.mtt{
+  margin-bottom:2rem ;
+}
+
+.mttt{
+  margin-bottom: 3rem;
+}
+
+
+
+
+
+/* span {
+  animation: heart 2s infinite linear;
+}
+
+@keyframes heart {
+  0%,
+  100% {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 1;
+  }
+} */
+
+
+
+/* Main section styles */
+main{
+  color: #1b1b1b ;
+  min-height: calc(100vh - 137px);
+  font-size: 30px;
+  font-weight: bold;
+  line-height: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+   text-align: center;
+   background: url(../images/pexels-content-pixie-2736499.jpg);
+   background-size: cover;
+   background-position: center;
+   background-repeat: no-repeat;
+}
+
+.Dark main{
+  
+  color:aliceblue
+}
+
+h2 p {
+  color: black;
+}
+
+.Dark h2 p {
+  color:aliceblue
+}
+
+
+
+
+
+
+
+
 
 .delete{
   margin-top: 25px;

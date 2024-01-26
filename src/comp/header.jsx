@@ -1,5 +1,7 @@
+// @ts-nocheck
+
 import React from "react";
-import { NavLink } from "react-router-dom";
+
 import "./Header.css";
 import "../theme.css";
 import { useContext } from "react";
@@ -11,39 +13,39 @@ import { auth } from "../firebase/config.js";
 
 // To sign out a user, call signOut:
 import { getAuth, signOut } from "firebase/auth";
+import { Link ,NavLink } from "react-router-dom";
+
+
 
 const Header = () => {
   const [user] = useAuthState(auth);
   const { theme, toggleThemeMode } = useContext(DataContext);
   return (
     <div className="myheader">
-      <header className="hide-when-mobile ali ">
-        {/* Logo */}
-
+      <header className="hide-when-mobile ali  ">
+        {/* MY Logo */}
         <h1>
+  
+          <Link to={"/"}> <div className="amr logo">TODO APP </div> </Link>
+          
+          
       
-          <a  href="https://www.facebook.com/profile.php?id=100093991665420"  > <div className="amr logo">Amr Dev. <span><i class="fa-solid fa-heart"></i></span></div>  </a>
-
-        
-    
         </h1>
 
+        {/* Moon & sun for dark mood */}
+        <i onClick={() => {
+          toggleThemeMode(theme === "Light" ? "Dark" : "Light");
+        }}
+          className="fa-solid fa-sun"></i>
         <i
-            onClick={() => {
-              toggleThemeMode(theme === "Light" ? "Dark" : "Light");
-            }}
-            className="fa-solid fa-sun"
-          ></i>
-        
-          <i
-            onClick={() => {
-              toggleThemeMode(theme === "Light" ? "Dark" : "Light");
-            }}
-            className="fa-solid fa-moon"
-          ></i>
+          onClick={() => {
+            toggleThemeMode(theme === "Light" ? "Dark" : "Light");
+          }}
+          className="fa-solid fa-moon"
+        ></i>
 
-    
 
+      {/* navbar  */}
         <ul>
           {/* if user did not sign up show below desgin for navbar  */}
           {!user && (
@@ -59,8 +61,18 @@ const Header = () => {
                   Sign-Up
                 </NavLink>
               </li>
+              <li className="main-list">
+                <NavLink className="main-link" to="/signup">
+                  About
+                </NavLink>
+              </li>
+              <li className="main-list">
+                <NavLink className="main-link" to="/signup">
+                  profile
+                </NavLink>
+              </li>
             </ul>
-            
+
           )}
 
           {/* if user signed up show below desgin for navbar  */}
@@ -104,19 +116,7 @@ const Header = () => {
               </li>
             </ul>
           )}
-
-  
-
-
-
         </ul>
-
-      
-
-      
-      
-
-
       </header>
 
     </div>

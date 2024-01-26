@@ -1,7 +1,8 @@
+// @ts-nocheck
 import { Helmet } from "react-helmet-async";
-import Header from "../comp/header";
+import Header from "../comp/Header";
 import Footer from "../comp/Footer";
-import MainContent from "../comp/MainContent";
+
 
 import Loading from "../comp/Loading";
 
@@ -18,22 +19,21 @@ import { useNavigate } from "react-router-dom";
 
 const About = () => {
   const [user, loading] = useAuthState(auth);
-  const navigate = useNavigate(); 
+  const navigate = useNavigate();
 
   useEffect(() => {
-  
-    if (!user && !loading)
-    {
+
+    if (!user && !loading) {
       navigate("/")
     }
-    
-  }, );
-  
+
+  },);
+
   //! 1  loading
   if (loading) {
     return (
       <main>
-    <Loading/>
+        <Loading />
       </main>
     );
   }
@@ -60,9 +60,10 @@ const About = () => {
             ..😊
           </h2>
         </main>
+
         <Footer />
       </>
-    );
+    )
   }
 
   //! 3 user have accont sign up { check if he verified his email or not}
@@ -81,14 +82,12 @@ const About = () => {
 
           <Header />
           <main>
-          
-            <MainContent pageName="About Page" />
           </main>
           <Footer />
         </>
-      );
+      )
     }
   }
-};
+}
 
 export default About;

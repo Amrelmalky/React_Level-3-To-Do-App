@@ -1,6 +1,6 @@
 import { Helmet } from "react-helmet-async";
 import React, { useState } from "react";
-import Header from "../comp/header";
+import Header from "../comp/Header";
 import Footer from "../comp/Footer";
 import "../theme.css";
 import "./SignIn.css";

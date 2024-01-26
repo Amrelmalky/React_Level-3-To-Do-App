@@ -1,0 +1,138 @@
+/*
+Table of content
+================
+Part1️⃣ Arrange Data Options // filter Data 
+Part2️⃣ Show The All Tasks 
+Part3️⃣ Add New Butto  
+================
+*/
+
+/* 
+==========================================
+Part1️⃣ Arrange Data Options // filter Data 
+===========================================
+*/
+main section.Parent-of-btns {
+
+  
+}
+
+main .Parent-of-btns button {
+  font-size: 12px;
+  color: whitesmoke;
+  background-color: rgb(223, 165, 39);
+  border-radius: 3px;
+  border: none;
+  padding: 7px;
+  margin-right: 12px;
+}
+
+main .Parent-of-btns select {
+  font-size: 12px;
+  color: whitesmoke;
+  background-color: #242C3A;
+  opacity: 0.7;
+  border-radius: 3px;
+  border: none;
+  outline: none;
+  padding: 7px;
+  padding-right: 75px;
+  margin-right: 12px;
+}
+
+
+
+/* 
+==========================================
+Part2️⃣ Show The All Tasks
+=========================================
+*/
+
+main section.All-Task {
+  flex-wrap: wrap;
+  justify-content: center;
+
+}
+
+
+main section.All-Task article {
+  border-radius: 3px;
+  width: 200px;
+  height: 130px;
+  flex-direction: column;
+  background-color: #242C3A;
+  opacity: 0.7;
+  padding-top: 15px;
+  margin-right: 15px;
+  transition: 0.3s;
+
+}
+
+
+main section.All-Task article:hover {
+  /* box-shadow: 0 0 15px rgb(255, 174, 0); */
+  /* border-bottom: 3px solid  rgb(255, 174, 0) ; */
+  border-top: 3px solid rgb(255, 174, 0);
+  cursor: pointer;
+}
+
+
+
+main section.All-Task h2 {
+  font-size: 16px;
+  color: white !important;
+}
+
+main section.All-Task li {
+  padding: 12px;
+  margin-top: 5px;
+  font-size: 10px;
+  text-align: start;
+  line-height: 1px;
+  list-style-type: circle;
+  list-style-position: inside;
+}
+
+
+
+
+main section.All-Task .time {
+  font-size: 9px;
+  color: rgb(223, 165, 39);
+  text-align: right;
+  margin-right: 10px;
+  margin-top: 10px;
+  font-weight: bolder;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* 
+========================
+Part3️⃣ Add New Butto 
+======================== 
+ */
+
+ main section button.Add-New-Task{
+  font-size: 12px;
+  color: whitesmoke;
+  background-color: rgb(223, 165, 39);
+  border-radius: 3px;
+  border: none;
+  padding: 7px;
+  margin-top: 20px;
+  
+}
