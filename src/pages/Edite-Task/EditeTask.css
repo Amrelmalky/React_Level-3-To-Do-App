@@ -1,0 +1,80 @@
+
+/* 
+Table of contents 
+========================
+Part1️⃣ Title of the Main Task
+Part2️⃣ The Sub-tasks
+Part3️⃣ add & delete buttons
+
+*/
+
+
+.edite-task{
+    min-height: calc(100vh - 137px);
+    background: url(../../../images//pexels-content-pixie-2736499.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+}
+
+
+/*
+----------------------------- 
+Part1️⃣ Title of the Main Task section 
+----------------------------
+ */
+
+ .edite-task .task-title-input{
+  background-color: transparent;
+  color: black;
+  font-size: 22px;
+  font-weight: bold;
+  margin-top: 50px;
+  border: none;
+  border-radius: 5px;
+  margin-right:30px;
+  
+ }
+
+ .edite-task .fa-pen-to-square{
+  font-size: 20px;
+  color: #000000;
+  transition: 0.2s;
+ }
+
+
+ .edite-task .fa-pen-to-square:hover{
+  font-size: 22px;
+  cursor: pointer;
+ }
+
+
+ /* 
+ Part2️⃣ The Sub-tasks section 
+ */
+
+
+.edite-task section.sub-tasks{
+  border: 2px solid red;
+  max-width: 620px;
+  height:200px;
+  margin-right: auto;
+  margin-left: auto;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+ /* 
+ Part3️⃣ add & delete buttons
+ */

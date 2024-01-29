@@ -3,7 +3,7 @@ Table of content
 ================
 Part1️⃣ Arrange Data Options // filter Data 
 Part2️⃣ Show The All Tasks 
-Part3️⃣ Add New Butto  
+Part3️⃣ Add New Button  
 ================
 */
 
@@ -12,10 +12,6 @@ Part3️⃣ Add New Butto
 Part1️⃣ Arrange Data Options // filter Data 
 ===========================================
 */
-main section.Parent-of-btns {
-
-  
-}
 
 main .Parent-of-btns button {
   font-size: 12px;
@@ -39,7 +35,6 @@ main .Parent-of-btns select {
   padding-right: 75px;
   margin-right: 12px;
 }
-
 
 
 /* 
@@ -77,7 +72,6 @@ main section.All-Task article:hover {
 }
 
 
-
 main section.All-Task h2 {
   font-size: 16px;
   color: white !important;
@@ -94,8 +88,6 @@ main section.All-Task li {
 }
 
 
-
-
 main section.All-Task .time {
   font-size: 9px;
   color: rgb(223, 165, 39);
@@ -105,20 +97,6 @@ main section.All-Task .time {
   font-weight: bolder;
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 /* 
 ========================

@@ -47,7 +47,6 @@ h1 {
   justify-content: center;
 }
 
-
 .mt{
   margin-bottom: 1rem;
 }
@@ -60,7 +59,11 @@ h1 {
   margin-bottom: 3rem;
 }
 
+.center{
+  text-align: center;
+}
 
+/* ===================================================== */
 
 
 

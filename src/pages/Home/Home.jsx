@@ -119,39 +119,25 @@ const Home = () => {
             {/* Part2️⃣ Show The All Tasks */}
             <section className="All-Task flex mtt">
 
-              <article  dir="auto" className="mt" >
-                <ul>
-                  <h2>New Task</h2>
-                  <li>sub task 1</li>
-                  <li>sub task 2</li>
-                  <p className="time"> A Day Ago</p>
-                </ul>
-              </article>
-              <article dir="auto" className="mt">
-                <ul>
-                  <h2>New Task</h2>
-                  <li>sub task 1</li>
-                  <li>sub task 2</li>
-                  <p className="time "> A Day Ago</p>
-                </ul>
-              </article>
-              <article dir="auto" className="mt">
-                <ul>
-                  <h2>مهمة جديدة</h2>
-                  <li>شراء جوافة من كارفور</li>
-                  <li> غسيل العربية</li>
-                  <p className="time "> A Day Ago</p>
-                </ul>
-              </article>
+              <Link to={"/editepage"}>
+                <article dir="auto" className="mt" >
+                  <ul>
+                    <h2>New Task</h2>
+                    <li>sub task 1</li>
+                    <li>sub task 2</li>
+                    <p className="time"> A Day Ago</p>
+                  </ul>
+                </article>
+              </Link>
+
+
             </section>
             {/* Part3️⃣ Add New Butto  */}
 
             <section className=" mt flex">
 
-
               <button className="Add-New-Task"> Add New Task </button>
             </section>
-
 
           </main>
           <Footer />

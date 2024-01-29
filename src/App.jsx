@@ -10,6 +10,7 @@ import { useContext } from "react";
 import DataContext from "./context/ThemeContext";
 import SignIn from "./pages/SignIn";
 import SignUp from "./pages/SignUp";
+import EditeTask from "./pages/Edite-Task/EditeTask";
 
 const router = createBrowserRouter([
   {
@@ -35,6 +36,11 @@ const router = createBrowserRouter([
   {
     path: "/signup",
     element: <SignUp />,
+  },
+
+  {
+    path: "/editepage",
+    element: <EditeTask />,
   },
 ]);
 
