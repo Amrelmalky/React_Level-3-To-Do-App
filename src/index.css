@@ -44,22 +44,23 @@ h1 {
 /* ! Very importat rule  */
 .flex {
   display: flex;
-  justify-content: center;
+  align-items: center;
+
 }
 
-.mt{
+.mt {
   margin-bottom: 1rem;
 }
 
-.mtt{
-  margin-bottom:2rem ;
+.mtt {
+  margin-bottom: 2rem;
 }
 
-.mttt{
+.mttt {
   margin-bottom: 3rem;
 }
 
-.center{
+.center {
   text-align: center;
 }
 
@@ -85,8 +86,8 @@ h1 {
 
 
 /* Main section styles */
-main{
-  color: #1b1b1b ;
+main {
+  color: #1b1b1b;
   min-height: calc(100vh - 137px);
   font-size: 30px;
   font-weight: bold;
@@ -95,16 +96,22 @@ main{
   flex-direction: column;
   justify-content: center;
   align-items: center;
-   text-align: center;
-   background: url(../images/pexels-content-pixie-2736499.jpg);
-   background-size: cover;
-   background-position: center;
-   background-repeat: no-repeat;
+  text-align: center;
+
+  background: url(../images/pexels-luna-lovegood-4087271.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
-.Dark main{
-  
-  color:aliceblue
+
+.Dark main {
+
+  background: url(../images/top-view-workspace-with-notebook-succulent-plant.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
 }
 
 h2 p {
@@ -112,7 +119,7 @@ h2 p {
 }
 
 .Dark h2 p {
-  color:aliceblue
+  color: aliceblue
 }
 
 
@@ -123,31 +130,31 @@ h2 p {
 
 
 
-.delete{
+.delete {
   margin-top: 25px;
-  background-color:  #dc3545;
+  background-color: #dc3545;
   padding: 0.375rem 0.75rem;
   font-size: 1rem;
   line-height: 1.5;
   border-radius: 0.25rem;
   border: none;
   cursor: pointer;
-  }
+}
 
 
-  .fa-heart{
-    color: #dc3545;
-    transition: 4s;
-  }
+.fa-heart {
+  color: #dc3545;
+  transition: 4s;
+}
 
 
- .fa-arrow-right-to-bracket{
-    color: #0482f8 !important;
-  }
+.fa-arrow-right-to-bracket {
+  color: #0482f8 !important;
+}
 
 
-  
-  .fa-user-plus{
-color: #0482f8 !important;
-margin-left: 5px;
-  }
+
+.fa-user-plus {
+  color: #0482f8 !important;
+  margin-left: 5px;
+}

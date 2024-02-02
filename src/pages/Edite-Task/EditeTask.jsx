@@ -16,39 +16,90 @@ function EditeTask() {
         <meta name="description" content="EditeTask" />
       </Helmet>
 
-      <Header/>
+      <Header />
 
       {/* Edite Task */}
       <div className="edite-task " >
-      {/* Part1️⃣  Title of the Main Task */}
+        {/* Part1️⃣  Title of the Main Task */}
 
-      <section className="task-title center mttt">
+        <section className="task-title center mttt">
 
-        <input value={" Edite task title"} className="task-title-input center" type="text" />
-        <i className="fa-solid fa-pen-to-square"></i>
-      </section>
+          <input value={" Welcome to Tasks"} className="task-title-input center" type="text" />
+          <i className="fa-solid fa-pen-to-square"></i>
+        </section>
 
-      {/* Part2️⃣ The Sub-tasks */}
+        {/* Part2️⃣ The Sub-tasks */}
 
-<section className="sub-tasks">
-  <div></div>
-  <div></div>
-  <div></div>
+        <section className="sub-tasks">
+          {/* creted p & check box */}
+          <div className='parent-fo-time'>
+            <p className="time">Craeted 6 days ago </p>
+            <div>
+              <input type="checkbox" id="checkbox" />
+              <label htmlFor="checkbox"> Completed  </label>
+            </div>
+          </div>
+          {/* sub task */}
+          <div className="task-card">
+            <ul >
+              <li className='task flex'>
+                <p>Task One </p>
+                <i class="fa-solid fa-trash"></i>
 
-</section>
+              </li>
+            </ul>
+          </div>
+          <div className="task-card">
+            <ul >
+              <li className='task flex'>
+                <p>Task two </p>
+                <i class="fa-solid fa-trash"></i>
 
 
+              </li>
+            </ul>
+          </div>
+          <div className="task-card">
+            <ul >
+              <li className='task flex'>
+                <p>Task two </p>
+                <i class="fa-solid fa-trash"></i>
 
 
+              </li>
+            </ul>
+          </div>
 
-      {/* Part3️⃣ add & delete buttons */}
+          <div className="task-card">
+            <ul >
+              <li className='task flex'>
+                <p>Task two </p>
+                <i class="fa-solid fa-trash"></i>
 
 
+              </li>
+            </ul>
+          </div>
+        
+
+    
+      
+            </section>
+
+
+        {/* Part3️⃣ add & delete buttons */}
+
+        <section className='tasks-btns flex'>
+        
+          <button className='add'>Add +</button>
+        
+        <button className='delete mttt'>Delete</button>
+        </section>
 
 
       </div>
 
-      <Footer/>
+      <Footer />
 
 
 

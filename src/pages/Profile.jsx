@@ -80,7 +80,7 @@ const deletAccountHandler = () => {
             <title> Profile Page </title>
             <meta name="description" content="Profile page"></meta>
             <style type="text/css">{`
-            main{
+            .info-card{
               display: flex;
               flex-direction: column;
               border: 1px soild red;
@@ -98,33 +98,36 @@ const deletAccountHandler = () => {
           {/* checking if user not created ( user = false) show up below .. */}
 
           <main>
-            <h6 className="hidenContent">User Name :{user.displayName}</h6>
-            <h6 className="hidenContent">User email :{user.email}</h6>
-            <h6 className="hidenContent">
-              Account Created :
-              <Moment
-                className="hidenContent"
-                fromNow
-                date={user.metadata.creationTime}
-              />
-            </h6>
-            <h6 className="hidenContent">
-              {" "}
-              Last Sign-in :{" "}
-              <Moment
-                className="hidenContent"
-                fromNow
-                date={user.metadata.lastSignInTime}
-              />
-            </h6>
-            <button
-              onClick={() => {
-              deletAccountHandler()
-              }}
-              className="delete"
-            >
-              Delete account
-            </button>
+
+  < div className="info-card">
+              <h6 className="hidenContent">User Name :{user.displayName}</h6>
+              <h6 className="hidenContent">User email :{user.email}</h6>
+              <h6 className="hidenContent">
+                Account Created :
+                <Moment
+                  className="hidenContent"
+                  fromNow
+                  date={user.metadata.creationTime}
+                />
+              </h6>
+              <h6 className="hidenContent">
+            
+                Last Sign-in :{" "}
+                <Moment
+                  className="hidenContent"
+                  fromNow
+                  date={user.metadata.lastSignInTime}
+                />
+              </h6>
+              <button
+                onClick={() => {
+                deletAccountHandler()
+                }}
+                className="delete"
+              >
+                Delete account
+              </button>
+  </ div>
           </main>
 
           <Footer />
