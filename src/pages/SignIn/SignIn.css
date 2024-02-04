@@ -1,0 +1,95 @@
+
+
+
+/*  sign in form  */
+#signInForm{
+  background-color:#edbd5d91;
+  height: 300px;
+}
+
+#signInForm:hover{
+  background-color:#ec9f049b;
+}
+
+#signInForm p {
+  color: black !;
+  font-size: 16px ;
+}
+
+
+/* sign in forget password paragraph */
+.forget {
+  font-size: 12px !important;
+  font-weight: bolder;
+  letter-spacing: .2px;
+}
+
+.forget:hover {
+  cursor: pointer;
+}
+
+
+
+/* 
+!foegt passowrd form style
+Scale : 0 --> disappear element  scale : 1 element as it is 
+ */
+
+ .modal-background{
+
+  position: fixed;
+  top:0;
+  bottom: 0;
+  right:0;
+  left:0;
+  background-color: #1e1c1c77;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.forget-form {
+  background-color:#eaa9289d;
+  position: fixed;
+  height: 200px;
+  margin-left: auto;
+
+}
+
+
+
+.forget-form p.forget {
+  color: #1e1c1c;
+  font-size:50PX ;
+  
+}
+
+
+/* .Active-forget-password {
+  scale: 0;
+  transform: translateY(0)
+} */
+
+.fa-xmark {
+  color: #dc3545;
+  position: absolute;
+  top: 5px;
+  right: 20px;
+  font-size: 25px;
+
+}
+
+
+
+.fa-xmark:hover {
+  transform: rotate(360deg);
+  transition: 2s;
+  cursor: pointer;
+  }
+
+
+
+
+
+

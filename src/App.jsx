@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Home from "./pages/Home/Home";
 import About from "./pages/About";
@@ -8,7 +9,7 @@ import Error404 from "./pages/Error404";
 import { useContext } from "react";
 //بستدعى الملف الذى يحتوى على الداتا
 import DataContext from "./context/ThemeContext";
-import SignIn from "./pages/SignIn";
+import SignIn from "./pages/SignIn/SignIn";
 import SignUp from "./pages/SignUp";
 import EditeTask from "./pages/Edite-Task/EditeTask";
 
