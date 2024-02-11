@@ -1,5 +1,6 @@
 // @ts-nocheck
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { Helmet, HelmetProvider } from 'react-helmet-async';
 import Home from "./pages/Home/Home";
 import About from "./pages/About";
 import Profile from "./pages/Profile";

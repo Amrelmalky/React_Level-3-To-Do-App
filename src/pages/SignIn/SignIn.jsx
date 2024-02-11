@@ -24,6 +24,10 @@ import { useAuthState } from "react-firebase-hooks/auth";
 // Import useNavigate hook from react router
 import { useNavigate } from "react-router-dom";
 
+
+
+import Modal from "../../shared/Modal";
+
 const SignIn = () => {
   const [user] = useAuthState(auth);
   const [email, setEmail] = useState("");
@@ -38,21 +42,15 @@ const SignIn = () => {
 
   const [useModal, setModal] = useState(false);
 
-  const showForgetFormHandler = () => {
+  const openModal = () => {
     setModal(true)
   }
 
-  const showSignInFormHandler = () => {
+  const closeModal = () => {
     setModal(false)
   }
-  
-  
 
 
-
-
-
-  const [showRestMsg, setshowRestMsg] = useState(true);
 
   // use useNavigate to go to another componednt
   const navigate = useNavigate();
@@ -126,52 +124,48 @@ const SignIn = () => {
 
   const verificationHandler = () => {
     sendEmailVerification(auth.currentUser).then(() => {
-      setshowRestMsg(true)
+      // setshowRestMsg(true)
       console.log("Email verification sent!");
     });
   }
 
+  // //! 1st user Signed Up ( did't verified his email or verified his email )
+  // if (user) {
+  //   if (!user.emailVerified) {
+  //     return (
+  //       <>
+  //         <Helmet>
+  //           <title>HOME Page</title>
+  //           <meta name="description" content="HOMEEEEEEEEEEEE" />
+  //         </Helmet>
+  //         <Header />
+  //         <main>
+  //           <h2 className="hidenContent">
+  //             <p>
+  //               Hello {user.displayName} <span>🧡</span>
+  //             </p>
+  //             <p>
+  //               Verification Mail Sent , Pleae check your Inbox to verify ..
+  //             </p>
+  //           </h2>
+  //           <button
+  //             onClick={() => {
+  //               verificationHandler()
+  //             }}
+  //             className="delete"
+  //           >
+  //             Send Again
+  //           </button>
+  //         </main>
+  //         <Footer />
+  //       </>
+  //     );
+  //   }
 
-
-  //! 1st user Signed Up ( did't verified his email or verified his email )
-  if (user) {
-    if (!user.emailVerified) {
-      return (
-        <>
-          <Helmet
-            // @ts-ignore
-            Helmet>
-            <title>HOME Page</title>
-            <meta name="description" content="HOMEEEEEEEEEEEE" />
-          </Helmet>
-          <Header />
-          <main>
-            <h2 className="hidenContent">
-              <p>
-                Hello {user.displayName} <span>🧡</span>
-              </p>
-              <p>
-                Verification Mail Sent , Pleae check your Inbox to verify ..
-              </p>
-            </h2>
-            <button
-              onClick={() => {
-                verificationHandler()
-              }}
-              className="delete"
-            >
-              Send Again
-            </button>
-          </main>
-          <Footer />
-        </>
-      );
-    }
-
-    if (user.emailVerified) {
-      navigate("/");
-    }
-  }
+  //   if (user.emailVerified) {
+  //     navigate("/");
+  //   }
+  // }
 
   //! 1st user Not Signed in
   if (!user) {
@@ -180,64 +174,14 @@ const SignIn = () => {
         <Helmet>
           <title >Sign In Page</title>
           <meta name="description" content="sign in" />
+      
         </Helmet>
         <Header />
         <main>
 
 
 
-          {useModal &&
-
-          <div className="modal-background">
-              <form  className="forget-form">
-                <i
-                  className="close fa-solid fa-xmark"
-                  onClick={() => {
-                    showSignInFormHandler()
-                    
-                  }}
-                ></i>
-            
-            
-            
-                <input
-               onChange={(eo) => {
-                    setEmail(eo.target.value);
-                  }}
-                  type="text"
-                  id="nameOrEmail"
-                  name="nameOrEmail"
-                  value={email}
-                  required=""
-                  placeholder="Email:"
-                />
-                <button
-                  className="delete"
-                  onClick={
-                    (eo) => {
-                      restPassHandler(eo)
-                      setshowRestMsg(true)
-                      setEmail("")
-                    }
-                  }
-                >
-                  Rest Now
-                </button>
-                {/* 
-              {(email==="") && (showRestMsg===false) &&  (<p className="forget"> "pls insert your email"</p>)}
-            
-              {(showRestMsg=== true) && (email !== "") && (<p className="forget"> Pls check you Email , In order to reset your password "</p>  )} */}
-            
-            
-              </form>
-          </div>
-          }
-
-
-
           {!useModal &&
-
-
             <form id="signInForm">
               <p className="mtt"> Please Sign in :</p>
 
@@ -278,8 +222,7 @@ const SignIn = () => {
               <p
                 className="forget"
                 onClick={() => {
-                  
-                  showForgetFormHandler()
+                  openModal(true)
                 }}
               >
                 Forget Password !
@@ -288,8 +231,34 @@ const SignIn = () => {
           }
 
 
-        </main>
+          {useModal &&
 
+            <div className="modal-background">
+              <Modal closeModal={closeModal}>
+                <input
+                  onChange={(eo) => {
+                  }}
+                  type="text"
+                  id="nameOrEmail"
+                  name="nameOrEmail"
+                  value={""}
+                  required=""
+                  placeholder="Email:"
+                />
+                <button
+                  className="delete"
+                  onClick={
+                    (eo) => {
+                    }
+                  }
+                >
+                  Rest Now
+                </button>
+              </Modal>
+
+            </div>
+          }
+        </main>
         <Footer />
       </>
     );
@@ -297,3 +266,5 @@ const SignIn = () => {
 };
 
 export default SignIn;
+
+

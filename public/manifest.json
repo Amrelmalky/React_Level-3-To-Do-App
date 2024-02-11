@@ -4,8 +4,8 @@
   "display": "standalone",
   "scope": "/",
   "start_url": "/",
-  "name": "c4a.store",
-  "short_name": "c4a.store",
+  "name": "TodoApp-By Amr Elmalky",
+  "short_name": "Todo-App",
   "icons": [
     {
       "src": "/icon-192x192.png",

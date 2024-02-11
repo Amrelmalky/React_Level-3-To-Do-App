@@ -3,8 +3,10 @@ import { Helmet } from "react-helmet-async";
 import Header from "../../comp/Header";
 import Footer from "../../comp/Footer";
 import Loading from "../../comp/Loading";
-import { Link } from "react-router-dom";
+// import Modal from "shared/Modal"
 
+import Modal from "../../shared/Modal";
+import { Link } from "react-router-dom";
 import "./Home.css"
 
 
@@ -13,11 +15,27 @@ import { auth } from "../../firebase/config";
 import { useAuthState } from "react-firebase-hooks/auth";
 
 import { sendEmailVerification } from "firebase/auth";
+import { useState } from "react";
 
 
 
 const Home = () => {
   const [user, loading] = useAuthState(auth);
+
+
+  // using useState to manage state of modal
+  const [useModal, setModal] = useState(false);
+
+  const openModal = () => {
+    setModal(true)
+  }
+
+  const closeModal = () => {
+    setModal(false)
+  }
+
+
+
 
   const verificationEmailHandler = () => {
     sendEmailVerification(auth.currentUser)
@@ -65,7 +83,6 @@ const Home = () => {
 
   //! 3 if user signed up but did't verified his email
   //! 4 if user signed up and verified his email
-
   if (user) {
     if (!user.emailVerified) {
       return (
@@ -73,6 +90,22 @@ const Home = () => {
           <Helmet>
             <title>HOME Page</title>
             <meta name="description" content="HOME" />
+
+            <style type="text/css">{`
+  .add-new-task{
+    background-color: #cddfa9;
+    display: flex;
+    flex-direction: column;
+
+}            
+
+
+.modal-background input {
+  width: 210px
+}
+   
+
+    `}</style>
           </Helmet>
           <Header />
           <main>
@@ -100,6 +133,33 @@ const Home = () => {
           <Helmet>
             <title>HOME Page</title>
             <meta name="description" content="HOME" />
+
+            <style type="text/css">{`
+          form button.submit {
+            padding: 5px 10px;
+            background-color: #DFA527;
+            color: black;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 15px;
+            margin: 20px 0;
+            font-weight: bolder;
+            font-family: 'system-ui'
+}
+ 
+            form button.Add-task{
+            padding: 9px 10px;
+            background-color: #DFA527;
+            color: black;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 13px;
+            margin: 20px 10px;
+            font-weight: bolder;
+            font-family: 'system-ui';
+            }`}</style>
           </Helmet>
           <Header />
           <main>
@@ -136,8 +196,71 @@ const Home = () => {
 
             <section className=" mt flex">
 
-              <button className="Add-New-Task"> Add New Task </button>
+              <button className="Add-New-Task"
+                onClick={
+                  () => {
+                    openModal()
+                  }
+                }
+              > Add New Task + </button>
             </section>
+
+
+            {useModal &&
+              <div className="modal-background">
+                <Modal closeModal={closeModal}>
+
+
+                  <div style={{
+                    "display": "flex",
+                    "flex-direction": "column",
+                    "backgroundcolor": "chocolat",
+
+                  }}>
+
+                  
+                    <input type="text"  name="task title" placeholder="The Main Task" required/>
+
+                    <div className="sub-task">
+                      <input
+                        type="text"
+                        id="nameOrEmail"
+                        name="nameOrEmail"
+                      
+                        required
+                        placeholder="sub-task....."
+                      />
+
+
+                      <button className="Add-task"
+                        onClick={
+                          (eo) => {
+                          }
+                        }
+                      >
+                        Add
+                      </button>
+                    </div>
+
+
+                  </div>
+                  <button
+                    className="submit"
+                    onClick={
+                      (eo) => {
+                        eo.preventDefault()
+                      }
+                    }
+                  >
+                    Submit
+                  </button>
+
+
+                </Modal>
+
+
+              </div>
+            }
 
           </main>
           <Footer />
