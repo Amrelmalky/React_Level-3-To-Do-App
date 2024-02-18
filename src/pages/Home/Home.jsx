@@ -1,13 +1,16 @@
-// @ts-nocheck
 import { Helmet } from "react-helmet-async";
 import Header from "../../comp/Header";
 import Footer from "../../comp/Footer";
 import Loading from "../../comp/Loading";
-// import Modal from "shared/Modal"
-
-import Modal from "../../shared/Modal";
 import { Link } from "react-router-dom";
+
+//level 3
+import Modal from "../../shared/Modal";
 import "./Home.css"
+import { doc, setDoc } from "firebase/firestore";
+import { db } from "../../firebase/config.js";
+
+
 
 
 // use Authentication state hook
@@ -20,11 +23,28 @@ import { useState } from "react";
 
 
 const Home = () => {
-  const [user, loading] = useAuthState(auth);
+  //! level 3 Rendering Array of data
 
+  const [arrayOfSubTasks, setarrayOfSubTask] = useState([]);
+  const [subTask, setsubTask] = useState("");
+  const [mainTaskTiltle, setmainTaskTiltle] = useState("");
+
+
+
+  const addSubTaskHandler = () => {
+    arrayOfSubTasks.push(subTask)
+    console.log(arrayOfSubTasks)
+    setsubTask("")
+  }
+
+
+
+  const [user, loading] = useAuthState(auth);
 
   // using useState to manage state of modal
   const [useModal, setModal] = useState(false);
+
+
 
   const openModal = () => {
     setModal(true)
@@ -92,20 +112,15 @@ const Home = () => {
             <meta name="description" content="HOME" />
 
             <style type="text/css">{`
-  .add-new-task{
-    background-color: #cddfa9;
-    display: flex;
-    flex-direction: column;
+            .add-new-task{
+              background-color: #cddfa9;
+              display: flex;
+              flex-direction: column;
+            }            
+            .modal-background input {
+              width: 210px
+            }`}</style>
 
-}            
-
-
-.modal-background input {
-  width: 210px
-}
-   
-
-    `}</style>
           </Helmet>
           <Header />
           <main>
@@ -218,15 +233,31 @@ const Home = () => {
 
                   }}>
 
-                  
-                    <input type="text"  name="task title" placeholder="The Main Task" required/>
+
+                    <input
+                      onChange={
+                        (eo) => {
+                          setmainTaskTiltle(eo.target.value)
+
+                        }
+                      }
+                      value={mainTaskTiltle}
+                      type="text"
+                      name="task title"
+                      placeholder="The Main Task"
+                      required />
 
                     <div className="sub-task">
                       <input
+
+                        onChange={(eo) => {
+                          setsubTask(eo.target.value)
+                        }
+                        }
                         type="text"
                         id="nameOrEmail"
                         name="nameOrEmail"
-                      
+                        value={subTask}
                         required
                         placeholder="sub-task....."
                       />
@@ -235,6 +266,8 @@ const Home = () => {
                       <button className="Add-task"
                         onClick={
                           (eo) => {
+                            eo.preventDefault()
+                            addSubTaskHandler()
                           }
                         }
                       >
@@ -242,14 +275,34 @@ const Home = () => {
                       </button>
                     </div>
 
+                    <ul>
+                      {arrayOfSubTasks.map((item) => (
+                        <li key={item} >{item}</li>
+
+                      ))}
+
+                    </ul>
+
 
                   </div>
                   <button
                     className="submit"
-                    onClick={
-                      (eo) => {
-                        eo.preventDefault()
-                      }
+                    onClick={async (eo) => {
+                      eo.preventDefault()
+                      console.log('waiting.......😜')
+
+                      const taskId = new Date().getTime();
+                      const userUid = user.uid
+                      await setDoc(doc(db, userUid, `${taskId}`), {
+                        Title:  mainTaskTiltle ,
+                        ThesubTask: arrayOfSubTasks ,
+                        id:taskId
+
+                      });
+                      console.log('Done......✌')
+                      setmainTaskTiltle("")
+                      setarrayOfSubTask([])
+                    }
                     }
                   >
                     Submit

@@ -13,11 +13,18 @@ function Modal({ closeModal, children }) {
         <meta name="description" content="Modal" />
         <style type="text/css">{`
 .Form-Modal {
-  background-color: #edbd5da1; 
+  background-color: #EDBD5D; 
   position: fixed;
   height: 310px;
   margin-left: auto;
   animation: mymove 1.5s 1;
+  overflow-y:scroll
+}
+
+.Form-Modal button:hover{
+  background-color: orange;
+
+
 }
 
 /* 
@@ -38,7 +45,7 @@ Modal Animation
 */
 
 .Form-Modal p.forget {
-  color: #1e1c1c;
+  color: #EDBD5D;
   font-size: 50PX;
 }
 

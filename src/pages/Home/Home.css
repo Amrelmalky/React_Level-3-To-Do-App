@@ -114,3 +114,26 @@ Part3️⃣ Add New Butto
   margin-top: 20px;
   
 }
+
+
+
+/* 
+========================
+Part 4️⃣ subtask list
+======================== 
+ */
+
+ main form li{
+  color: #2b292a;
+  font-size: 16px;
+  text-align: start;
+  list-style: circle;
+  list-style-position: inside;
+  padding-bottom: 6px;
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  
+ }
+
+ main form .submit{
+  text-align: start;
+ }
